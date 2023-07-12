@@ -1,0 +1,99 @@
+html {
+  height: 100%;
+}
+
+/* Estilos para el modo oscuro */
+.dark-mode {
+  background-color: #222222;
+  color: #ffffff;
+}
+
+/* Estilos modo claro */
+.dark-mode #toggleModeButton {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+#toggleModeButton {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background-color: #bebebe;
+  color: #000000;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.button-container {
+  position: fixed;
+  bottom: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.button {
+  position: relative;
+  margin-bottom: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  width: 120px;
+  height: 120px;
+  background-size: cover;
+  cursor: pointer;
+  border: 1px solid grey; /* Agrega un borde de 2px de grosor y color negro */
+  border-radius: 10px; /* Agrega bordes redondeados */
+  overflow: hidden; /* Añade esta propiedad para recortar el contenido dentro del borde */
+  transition: transform 0.3s; /* Agrega transición para suavizar el efecto */
+}
+
+.button:hover {
+  transform: scale(1.1); /* Aplica el efecto de zoom al pasar el ratón por encima */
+}
+
+.button-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+  font-size: 22px;
+  text-align: center;
+  font-family: "Helvetica", sans-serif;
+  z-index: 1; /* Asegúrate de que el texto esté sobre la imagen */
+}
+
+.button-text::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120%;
+  height: 120%;
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0.7); /* Color de fondo blanco semitransparente */
+  z-index: -1;
+  border-radius: 15px;
+}
+
+model-viewer {
+  width: 85%;
+  height: calc(85%);
+  margin-bottom: 235px;
+  margin-top: 60px;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

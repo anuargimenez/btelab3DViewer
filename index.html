@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>BTELab 3D Model Viewer</title>
+    <link rel="icon" href="assets/icons/BTELab Logo.png" type="image/png">
+    <link rel="shortcut icon" href="assets/icons/BTELab Logo.png" type="image/png">
+    <meta charset="utf-8">
+    <meta name="description" content="&lt;model-viewer&gt; template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" href="css/styles.css" rel="stylesheet"/>
+
+  </head>
+  <body>    
+    <!-- DARK-LIGHT MODE -->
+    <button id="toggleModeButton" onclick="toggleMode()">Modo Oscuro</button>
+
+    <div class="button-container">
+      <div class="button" style="background-image: url('assets/Anatomical Model/Vessels.webp');" onclick="changeView('vessels')">
+        <span class="button-text">Vessels</span>
+      </div>
+      <div class="button" style="background-image: url('assets/Anatomical Model/VesselsAtriums.webp');" onclick="changeView('vesselsatriums')">
+        <span class="button-text">No Ventricles</span>
+      </div>
+      <div class="button" style="background-image: url('assets/Anatomical Model/VesselsAtriumsLetVent.webp');" onclick="changeView('vesselsatriumsleftvent')">
+        <span class="button-text">No Right Ventricle</span>
+      </div>
+      <div class="button" style="background-image: url('assets/Anatomical Model/VesselsAtriumsAllVent.webp');" onclick="changeView('vesselsatriumsallvent')">
+        <span class="button-text">Full Model</span>
+      </div>
+    </div>
+    
+
+    <!-- <model-viewer> HTML element -->
+    <model-viewer 
+      id="modelViewer"
+      src="assets/Anatomical Model/VesselsAtriumsAllVent.glb" 
+      ar 
+      ar-modes="webxr scene-viewer quick-look" 
+      camera-controls 
+      poster="assets/Anatomical Model/VesselsAtriumsAllVent.webp" 
+      shadow-intensity="0.5" 
+      exposure="0.55" 
+      field-of-view="10deg">
+    </model-viewer>
+
+    <!-- Loads <model-viewer> for browsers: -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
+    
+    
+    <!-- CHANGE MODEL BUTTONS -->
+    <script>
+      function changeView(model) {
+        const modelViewer = document.getElementById('modelViewer');
+        switch (model) {
+          case 'vessels':
+            modelViewer.src = "assets/Anatomical Model/Vessels.glb";
+            break;
+          case 'vesselsatriums':
+            modelViewer.src = "assets/Anatomical Model/VesselsAtriums.glb";
+            break;
+          case 'vesselsatriumsleftvent':
+            modelViewer.src = "assets/Anatomical Model/VesselsAtriumsLetVent.glb";
+            break;
+          default:
+          case 'vesselsatriumsallvent':
+            modelViewer.src = "assets/Anatomical Model/VesselsAtriumsAllVent.glb";
+            break;
+        }
+      }
+    </script>
+
+    <!-- JS MODO OSCURO-CLARO -->
+    <script src="application/toggleMode.js"></script>
+
+  </body>
+</html>
