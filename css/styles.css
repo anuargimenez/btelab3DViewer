@@ -16,9 +16,9 @@ html {
 .button {
   position: relative;
   margin: 5px;
-  flex: 1 0 120px;
-  max-width: 120px;
-  height: 120px;
+  flex: 1 0 100px;
+  max-width: 100px;
+  height: 100px;
   background-size: cover;
   cursor: pointer;
   border: 1px solid grey;
@@ -37,7 +37,7 @@ html {
   left: 50%;
   transform: translate(-50%, -50%);
   color: black;
-  font-size: 22px;
+  font-size: 18px;
   text-align: center;
   font-family: "Helvetica", sans-serif;
   z-index: 1;
